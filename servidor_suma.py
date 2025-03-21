@@ -26,7 +26,6 @@ def serve():
     
     server.add_insecure_port('10.43.96.14:50052')
     server.start()
-    print("Servidor de Suma iniciado en puerto 50052...")
     server.wait_for_termination()
 
 if __name__ == '__main__':

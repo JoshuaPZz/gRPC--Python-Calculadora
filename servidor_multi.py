@@ -23,7 +23,6 @@ def serve():
     print(f"📡 Escuchando en: 10.43.96.14:50053")
     server.add_insecure_port('10.43.96.14:50053')
     server.start()
-    print("Servidor de Multiplicacion iniciado en puerto 50053...")
     server.wait_for_termination()
 
 if __name__ == '__main__':
