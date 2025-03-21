@@ -13,7 +13,7 @@ def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
     calculator_pb2_grpc.add_MultiplyServiceServicer_to_server(
         MultiServidor(), server)
-    server.add_insecure_port('0.0.0.0:50053')
+    server.add_insecure_port('10.43.96.14:50053')
     server.start()
     print("Servidor de Multiplicacion iniciado en puerto 50053...")
     server.wait_for_termination()
