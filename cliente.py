@@ -1,11 +1,11 @@
 import grpc
 import calculator_pb2
 import calculator_pb2_grpc
-import argparse
 
-def run(ip_central):
-    # Conectar con el servidor principal usando la IP proporcionada
-    with grpc.insecure_channel(f'{ip_central}:50051') as channel:
+IP_SERVIDOR_CENTRAL = "10.43.103.221"
+
+def run():
+    with grpc.insecure_channel(f'{IP_SERVIDOR_CENTRAL}:50051') as channel:
         stub = calculator_pb2_grpc.CentralServiceStub(channel)
         
         num1 = int(input("Ingrese el primer número: "))
@@ -21,8 +21,4 @@ def run(ip_central):
         print(f"Resultado: {response.result}")
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Cliente gRPC')
-    parser.add_argument('--ip-central', type=str, required=True, help='Dirección IP del servidor central')
-    args = parser.parse_args()
-    
-    run(args.ip_central)
+    run()
