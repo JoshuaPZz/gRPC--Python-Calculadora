@@ -3,10 +3,10 @@ from concurrent import futures
 import calculator_pb2
 import calculator_pb2_grpc
 
-class MultiServidor (calculator_pb2_grpc.MultiplyService):
-    def MultiplyService (self, request,context):
+class MultiServidor(calculator_pb2_grpc.MultiplyServiceServicer):
+    def MultiplicarNumeros(self, request, context):
         resultado = request.num1 * request.num2
-        print(f"Servidor de Multiplicacion: {request.num1} + {request.num2} = {resultado}")
+        print(f"Servidor de Multiplicacion: {request.num1} * {request.num2} = {resultado}")
         return calculator_pb2.Resultado(result=resultado)
     
 def serve():

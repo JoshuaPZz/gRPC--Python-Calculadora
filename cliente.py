@@ -12,9 +12,9 @@ def run():
         num3 = int(input("Ingrese el tercer número: "))
         
         response = stub.ProcessNumbers(calculator_pb2.ClientRequest(
-            number1=num1,
-            number2=num2,
-            number3=num3
+            num1=num1,
+            num2=num2,
+            num3=num3
         ))
         
         print(f"Resultado: {response.result}")
